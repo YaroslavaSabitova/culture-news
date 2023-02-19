@@ -5,8 +5,8 @@ $color-light-grey: #f4f4f4
 $color-grey: #a1a1a1
 $color-black: #000000
 
-$main-color: #ff7b00
-$main-color-light: #f4a75e
+$main-color: #31685e
+$main-color-light: #6df7ce
 
 // Общие стили 
 
@@ -41,6 +41,7 @@ img
 h1, h2, h3, h4
     margin: 0
     font-family: 'Playfair Display', serif
+    line-height: 120%
 
 a
     color: $color-black
@@ -67,17 +68,38 @@ ul, ol
     max-width: 144rem
     padding: 2.5rem 15rem
     margin: 0 auto
-    background-color: #94fae0
     text-align: center
 
 // HEADER
 
 .main-header
+    margin-bottom: 4rem
     &__title
         font-size: 3.5rem
         font-weight: 700
         margin-bottom: 5.5rem
-        line-height: 100%
+
+.animated-item
+    position: relative
+    transition: .2s ease-in-out
+    backface-visibility: hidden
+    z-index: 1
+    &::before
+        content: ""
+        background: $main-color-light
+        box-shadow: inset 0 -30px 40px -30px $main-color
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: -1
+        transform: scaleX(0)
+        transform-origin: bottom right
+        transition: transform 0.5s ease
+    &:hover::before
+        transform: scaleX(1)
+        transform-origin: bottom left
 
 .site-navigation
     display: flex
@@ -88,7 +110,27 @@ ul, ol
         flex-grow: 1
     &__link
         padding: 0 .5rem
-    
-// HERO
 
-    
+// HOTEL
+
+.hotel
+    max-width: 100%
+    height: 46rem
+    background: url(../img/hotel.jpg) center/cover no-repeat
+    color: $color-white
+    position: relative
+    &__title
+        font-size: 6rem
+        text-transform: uppercase
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -150%)
+    &__text
+        width: 40%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, 215%)
+
+
