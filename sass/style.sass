@@ -5,10 +5,14 @@ $color-light-grey: #f4f4f4
 $color-grey: #a1a1a1
 $color-black: #000000
 
-$main-color: #408679
-$main-color-light: #6df7ce
+$main-color: #36776a
+$main-color-light: #6ae7c2
 
 $box-shadow: 2px 2px 2px 0 $main-color
+
+@mixin colored-item
+    background: $main-color-light
+    box-shadow: inset 0 -30px 40px -30px $main-color
 
 // Общие стили 
 
@@ -51,6 +55,7 @@ a
     font-family: "Roboto", sans-serif
     text-decoration: none
     text-transform: uppercase
+    transition: .3s
 
 p, form
     font-family: "Roboto", sans-serif
@@ -73,16 +78,6 @@ ul, ol
     margin: 0 auto
     text-align: center
 
-// HEADER
-
-.main-header
-    margin-bottom: 4rem
-
-    &__title
-        font-size: 3.5rem
-        font-weight: 700
-        margin-bottom: 5.5rem
-
 .animated-item
     position: relative
     transition: .2s ease-in-out
@@ -90,9 +85,8 @@ ul, ol
     z-index: 1
 
     &::before
+        @include colored-item
         content: ""
-        background: $main-color-light
-        box-shadow: inset 0 -30px 40px -30px $main-color
         position: absolute
         top: 0
         right: 0
@@ -106,6 +100,38 @@ ul, ol
     &:hover::before
         transform: scaleX(1)
         transform-origin: bottom left
+
+.title
+    display: inline-block
+    font-size: 2rem
+    text-transform: uppercase
+    font-weight: 800
+    position: relative
+
+    &::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 2px
+        transform: scaleX(0)
+        background: $main-color
+        bottom: -3px
+        left: 0
+        transition: transform .5s ease
+
+    &:hover::after
+        transform: scaleX(1)
+        transform-origin: center
+
+// HEADER
+
+.main-header
+    margin-bottom: 4rem
+
+    &__title
+        font-size: 3.5rem
+        font-weight: 700
+        margin-bottom: 5.5rem
 
 .site-navigation
     display: flex
@@ -146,28 +172,6 @@ ul, ol
 
 // REVIEWS
 
-.title
-    display: inline-block
-    font-size: 2rem
-    text-transform: uppercase
-    font-weight: 800
-    position: relative
-
-    &::after
-        content: ""
-        position: absolute
-        width: 100%
-        height: 2px
-        transform: scaleX(0)
-        background: $main-color
-        bottom: -3px
-        left: 0
-        transition: transform .5s ease
-        
-    &:hover::after
-        transform: scaleX(1)
-        transform-origin: center 
-
 .reviews
     &__title
         margin-bottom: 2rem
@@ -179,7 +183,7 @@ ul, ol
         align-items: start
         text-align: left
 
-    &__img
+    img
         margin-bottom: 3rem
         transition: .5s
 
@@ -190,5 +194,69 @@ ul, ol
     &__item:hover a
         color: $main-color
 
-    &__item:hover &__img
+    &__item:hover img
         filter: brightness(1.2) saturate(90%)
+
+// PROMO
+
+.promo
+    position: relative
+    display: flex
+    justify-content: center
+    background: $color-light-grey
+    height: 42rem
+    overflow: hidden
+
+    &__title
+        margin-bottom: 1rem
+
+    &__list
+        width: 80%
+        margin: 0 auto 3rem
+
+    &__item
+        position: relative
+        &::before
+            content: ''
+            display: block
+            height: 2px
+            width: 100px
+            background-color: rgba(0, 0, 0, 0.2)
+            opacity: 0.4
+            margin: calc(100% - 98%) auto
+
+    &__item:hover a
+        color: $main-color
+
+    &__subtitle
+        font-weight: 600
+        margin-bottom: 1rem
+
+    &__details
+        @include colored-item
+        display: inline-flex
+        justify-content: space-between
+        align-items: center
+        width: 17rem
+        padding: 1.5rem 2rem
+        color: $color-white
+        font-weight: 700
+        letter-spacing: .2rem
+        border: 1px solid $main-color
+        border-radius: 1rem
+
+        &:hover img
+            transform: rotate(360deg) scale(1.2)
+
+        img
+            box-shadow: none
+            transition: all .5s ease-in-out
+
+.promo .container
+    position: absolute
+    background: $color-white
+    border-radius: 50%
+    width: calc(100% - 30%)
+    top: -5rem
+    height: 55rem
+    padding: 8rem 3rem 0
