@@ -25,6 +25,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  box-shadow: 2px 2px 2px 0 #408679;
 }
 
 h1, h2, h3, h4 {
@@ -85,7 +86,7 @@ ul, ol {
 .animated-item::before {
   content: "";
   background: #6df7ce;
-  box-shadow: inset 0 -30px 40px -30px #31685e;
+  box-shadow: inset 0 -30px 40px -30px #408679;
   position: absolute;
   top: 0;
   right: 0;
@@ -123,6 +124,7 @@ ul, ol {
   background: url(../img/hotel.jpg) center/cover no-repeat;
   color: #ffffff;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .hotel__title {
@@ -140,4 +142,59 @@ ul, ol {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 215%);
+}
+
+.title {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  background: #408679;
+  bottom: -3px;
+  left: 0;
+  transition: transform .5s ease;
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.reviews__title {
+  margin-bottom: 2rem;
+}
+
+.reviews__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+  align-items: start;
+  text-align: left;
+}
+
+.reviews__img {
+  margin-bottom: 3rem;
+  transition: .5s;
+}
+
+.reviews__subtitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.reviews__item:hover a {
+  color: #408679;
+}
+
+.reviews__item:hover .reviews__img {
+  filter: brightness(1.2) saturate(90%);
 }
