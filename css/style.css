@@ -25,7 +25,6 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  box-shadow: 2px 2px 2px 0 #36776a;
 }
 
 h1, h2, h3, h4 {
@@ -131,6 +130,7 @@ ul, ol {
 
 .site-navigation {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   letter-spacing: 2px;
 }
@@ -183,6 +183,7 @@ ul, ol {
 }
 
 .reviews img {
+  box-shadow: 2px 2px 2px 0 #36776a;
   margin-bottom: 3rem;
   transition: .5s;
 }
@@ -205,7 +206,7 @@ ul, ol {
   display: flex;
   justify-content: center;
   background: #f4f4f4;
-  height: 42rem;
+  height: 44rem;
   overflow: hidden;
 }
 
@@ -261,7 +262,6 @@ ul, ol {
 }
 
 .promo__details img {
-  box-shadow: none;
   transition: all .5s ease-in-out;
 }
 
@@ -273,4 +273,82 @@ ul, ol {
   top: -5rem;
   height: 55rem;
   padding: 8rem 3rem 0;
+}
+
+.main-footer {
+  background-color: #575757;
+  padding: 1rem 0;
+}
+
+.main-footer__title {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  text-transform: none;
+}
+
+.main-footer__title::after {
+  background: #f4f4f4;
+  bottom: -4px;
+  height: 1px;
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  letter-spacing: 2px;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 3rem;
+}
+
+.footer-navigation__item {
+  padding: 1rem .5rem;
+  flex-grow: 1;
+}
+
+.footer-navigation__link {
+  color: #ffffff;
+  transition: .5s;
+}
+
+.footer-navigation__link:hover {
+  color: #6ae7c2;
+}
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  letter-spacing: 2px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.social-list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #ffffff;
+  border: none;
+  border-radius: 3px;
+  margin: 1rem;
+  transition: .5s;
+}
+
+.social-list__item:hover {
+  background: #36776a;
+}
+
+.social-list__item:hover a {
+  color: #6ae7c2;
+}
+
+.social-list__item a {
+  font-size: 2rem;
+  color: #575757;
+  transition: .5s;
 }
