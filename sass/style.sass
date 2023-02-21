@@ -81,7 +81,6 @@ ul, ol
     list-style: none
 
 .container
-    // width: 100%
     width: 120rem
     padding: 2.5rem 5rem
     margin: 0 auto
@@ -218,7 +217,7 @@ ul, ol
         font-size: 6rem
         text-transform: uppercase
         position: absolute
-        top: 50%
+        top: 53%
         left: 50%
         transform: translate(-50%, -150%)
 
@@ -380,23 +379,128 @@ ul, ol
             color: $color-dark-grey
             transition: .5s
 
-// MEDIA
+// MEDIA QUERIES
 
 @media (max-width: 1199px)
     .container
         width: 960px
+        padding: 0
 
+    .main-header .container
+        width: 90%
+
+    .hotel__title
+        font-size: 5rem
+        top: 40%
+
+    .reviews__list
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+
+    .main-footer .container
+        width: 90%
 
 @media (max-width: 991px)
+    p
+        font-size: 1.6rem
+
     .container
         width: 720px
 
+    .hotel__text
+        width: 50%
+
+    .reviews
+        height: 87rem
+        margin-bottom: 7rem
+
+    .reviews__list
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+        grid-template-rows: repeat(2, 300px)
+        gap: 5rem 2rem
+
+    .reviews__item:nth-child(3)
+        grid-column: 1 / span 2
+        text-align: center
+
+        img
+            width: 100%
+
+    .promo
+        height: 48rem
+
+    .social-list
+        width: 50%
+
+    .main-footer
+        padding: 4rem 0
 
 @media (max-width: 767px)
-    .container
-        width: 540px
+    .title
+        font-size: 2.2rem
 
+    a
+        font-size: 2rem
+
+    p
+        font-size: 1.8rem
+
+    .container
+        width: 700px
+
+    .hotel
+        margin-bottom: 4rem
+
+        &__text
+            top: 37%
+
+    .reviews
+        height: 160rem
+
+        &__list
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            img
+                width: 100%
+
+        &__item
+            width: 100%
+            text-align: center
+
+    .promo__details
+        width: 20rem
+
+    .main-footer__title
+        text-transform: uppercase
+
+    .social-list
+        width: 60%
+
+        &__item a
+            font-size: 3rem
 
 @media (max-width: 575px)
     .container
         width: 100%
+        padding: 0 3rem
+
+    .reviews
+        height: 152rem
+
+        &__item
+            width: 60%
+
+    .footer-navigation
+        width: 80%
+        margin: 0 auto 3rem
+
+        &__item
+            padding: 1rem 1.5rem
+
+    .social-list__item
+        width: 7rem
+        height: 7rem
+
+        a
+            font-size: 4rem
