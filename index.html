@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/icon-font.css">
 </head>
 <body>
+    <div class="start" id="start">
+        <span class="visually-hidden">
+            Начало страницы
+        </span>
+    </div>
     <header class="main-header">
         <div class="container">
             <h1 class="main-header__title">
@@ -163,13 +168,20 @@
                 </ul>
                 <a class="promo__details" href="#!">
                     Смотреть
-                    <img src="icon/arrow.png" alt="Стрелка направо">
+                    <img src="icon/arrow-right.png" alt="Стрелка направо">
                 </a>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
+
+        <a href="#start" class="scroll-up-link scroll-up-link-showed">
+            <span class="visually-hidden">
+                Вернуться в начало
+            </span>
+        </a>
+
         <div class="container">
             <h2 class="title main-footer__title">
                 Новости культуры
@@ -241,5 +253,7 @@
             </ul>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

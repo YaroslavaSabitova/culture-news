@@ -1,4 +1,4 @@
-// Переменные и миксины 
+// VARIABLES AND MIXINS
 
 $color-white: #ffffff
 $color-light-grey: #f4f4f4
@@ -25,7 +25,7 @@ $box-shadow: 2px 2px 2px 0 $main-color
     padding: 1rem .5rem
     flex-grow: 1
 
-// Общие стили 
+// COMMON STYLES 
 
 *, ::after, ::before
     margin: 0
@@ -39,8 +39,7 @@ html
     font-size: 62.5%
 
 body
-    max-width: 100%
-    min-height: 100vh
+    min-width: 122rem
     font-size: 1.6rem
     line-height: 2rem
     font-family: "Roboto", sans-serif
@@ -82,9 +81,9 @@ ul, ol
     list-style: none
 
 .container
-    width: 100%
-    max-width: 144rem
-    padding: 2.5rem 15rem
+    // width: 100%
+    width: 120rem
+    padding: 2.5rem 5rem
     margin: 0 auto
     text-align: center
 
@@ -133,15 +132,68 @@ ul, ol
         transform: scaleX(1)
         transform-origin: center
 
+// BUTTON UP
+
+.start
+    position: absolute
+    top: 0
+
+.visually-hidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+    white-space: nowrap
+    clip-path: inset(100%)
+    clip: rect(0 0 0 0)
+    overflow: hidden
+
+.scroll-up-link
+    display: none
+    position: fixed
+    bottom: 140px
+    right: 40px
+    width: 52px
+    height: 52px
+    box-shadow: $box-shadow
+    border-radius: 30px
+    background-color: $color-light-grey
+    opacity: 0
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 16px
+        height: 8px
+        transform: translate(-50%, -50%)
+        background: url(../icon/arrow-up.svg) center/contain no-repeat
+
+.scroll-up-link-showed
+    display: block
+    position: fixed
+    animation: btn-showing .7s linear forwards
+    transition: .5s ease-in-out
+    &:hover
+        background-color: $main-color-light
+
+@keyframes btn-showing
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
 // HEADER
 
 .main-header
-    margin-bottom: 4rem
+    margin-bottom: 2rem
 
     &__title
         font-size: 3.5rem
         font-weight: 700
-        margin-bottom: 5.5rem
+        margin-bottom: 4.5rem
 
 .site-navigation
     @include navigation
@@ -180,8 +232,10 @@ ul, ol
 // REVIEWS
 
 .reviews
+    margin-bottom: 2rem
+
     &__title
-        margin-bottom: 2rem
+        margin-bottom: 3rem
 
     &__list
         display: grid
@@ -325,3 +379,24 @@ ul, ol
             font-size: 2rem
             color: $color-dark-grey
             transition: .5s
+
+// MEDIA
+
+@media (max-width: 1199px)
+    .container
+        width: 960px
+
+
+@media (max-width: 991px)
+    .container
+        width: 720px
+
+
+@media (max-width: 767px)
+    .container
+        width: 540px
+
+
+@media (max-width: 575px)
+    .container
+        width: 100%
