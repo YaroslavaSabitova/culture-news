@@ -144,6 +144,7 @@ ul, ol {
   box-shadow: 2px 2px 2px 0 #36776a;
   border-radius: 30px;
   background-color: #f4f4f4;
+  border: 1px solid #36776a;
   opacity: 0;
 }
 
