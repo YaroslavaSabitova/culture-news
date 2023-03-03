@@ -72,8 +72,8 @@ ul, ol {
 }
 
 .animated-item::before {
-  background: #6ae7c2;
-  box-shadow: inset 0 -30px 40px -30px #36776a;
+  background: #1CE4C0;
+  box-shadow: inset 0 -30px 40px -30px #205FCD;
   content: "";
   position: absolute;
   top: 0;
@@ -105,7 +105,7 @@ ul, ol {
   width: 100%;
   height: 2px;
   transform: scaleX(0);
-  background: #36776a;
+  background: #205FCD;
   bottom: -3px;
   left: 0;
   transition: transform .5s ease;
@@ -141,10 +141,10 @@ ul, ol {
   right: 40px;
   width: 52px;
   height: 52px;
-  box-shadow: 2px 2px 2px 0 #36776a;
+  box-shadow: 2px 2px 2px 0 #205FCD;
   border-radius: 30px;
   background-color: #f4f4f4;
-  border: 1px solid #36776a;
+  border: 1px solid #205FCD;
   opacity: 0;
 }
 
@@ -167,7 +167,7 @@ ul, ol {
 }
 
 .scroll-up-link-showed:hover {
-  background-color: #6ae7c2;
+  background-color: #1CE4C0;
 }
 
 @keyframes btn-showing {
@@ -248,7 +248,7 @@ ul, ol {
 }
 
 .reviews img {
-  box-shadow: 2px 2px 2px 0 #36776a;
+  box-shadow: 2px 2px 2px 0 #205FCD;
   margin-bottom: 3rem;
   transition: .5s;
 }
@@ -259,7 +259,7 @@ ul, ol {
 }
 
 .reviews__item:hover a {
-  color: #36776a;
+  color: #205FCD;
 }
 
 .reviews__item:hover img {
@@ -299,7 +299,7 @@ ul, ol {
 }
 
 .promo__item:hover a {
-  color: #36776a;
+  color: #205FCD;
 }
 
 .promo__subtitle {
@@ -308,8 +308,8 @@ ul, ol {
 }
 
 .promo__details {
-  background: #6ae7c2;
-  box-shadow: inset 0 -30px 40px -30px #36776a;
+  background: #1CE4C0;
+  box-shadow: inset 0 -30px 40px -30px #205FCD;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -318,7 +318,7 @@ ul, ol {
   color: #ffffff;
   font-weight: 700;
   letter-spacing: .2rem;
-  border: 1px solid #36776a;
+  border: 1px solid #205FCD;
   border-radius: 1rem;
 }
 
@@ -353,7 +353,7 @@ ul, ol {
 }
 
 .main-footer__title::after {
-  background: #f4f4f4;
+  background: #1CE4C0;
   bottom: -4px;
   height: 1px;
 }
@@ -379,7 +379,7 @@ ul, ol {
 }
 
 .footer-navigation__link:hover {
-  color: #6ae7c2;
+  color: #1CE4C0;
 }
 
 .social-list {
@@ -405,11 +405,11 @@ ul, ol {
 }
 
 .social-list__item:hover {
-  background: #36776a;
+  background: #205FCD;
 }
 
 .social-list__item:hover a {
-  color: #6ae7c2;
+  color: #1CE4C0;
 }
 
 .social-list__item a {
